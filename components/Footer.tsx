@@ -21,13 +21,6 @@ export default function Footer() {
             <p className="text-slate-400 mb-8 max-w-sm leading-relaxed">
               Agensi web premium yang meredefinisi pengalaman digital melalui desain eksklusif dan engineering tingkat tinggi.
             </p>
-            <div className="flex gap-4">
-              {['Twitter', 'LinkedIn', 'Instagram'].map((social) => (
-                <Link key={social} href="#" className="w-10 h-10 rounded-full glass flex items-center justify-center text-slate-400 hover:text-neon-cyan hover:border-neon-cyan transition-colors">
-                  <span className="text-xs">{social[0]}</span>
-                </Link>
-              ))}
-            </div>
           </div>
 
           <div className="col-span-1 md:col-span-3">
@@ -54,7 +47,7 @@ export default function Footer() {
             <ul className="space-y-4">
               <li className="flex items-start gap-3 text-slate-400">
                 <Mail className="w-5 h-5 text-neon-cyan shrink-0 mt-0.5" />
-                <span>hello@webagency.com</span>
+                <span>nexcodea@gmail.com</span>
               </li>
               <li className="flex items-start gap-3 text-slate-400 group">
                 <svg className="w-5 h-5 text-neon-cyan shrink-0 mt-0.5 fill-current group-hover:text-neon-blue transition-colors" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -77,8 +70,8 @@ export default function Footer() {
             © {new Date().getFullYear()} NexCodea. Hak Cipta Dilindungi.
           </p>
           <div className="flex gap-6 text-sm text-slate-500">
-            <Link href="#" className="hover:text-slate-300">Kebijakan Privasi</Link>
-            <Link href="#" className="hover:text-slate-300">Syarat & Ketentuan</Link>
+            <Link href="/kebijakan-privasi" className="hover:text-slate-300 transition-colors">Kebijakan Privasi</Link>
+            <Link href="/syarat-ketentuan" className="hover:text-slate-300 transition-colors">Syarat &amp; Ketentuan</Link>
           </div>
         </div>
       </div>

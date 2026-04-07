@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1280">
+<title>Maju Bersama – Konsultan Manajemen</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', sans-serif; background: #f9fafb; color: #111827; overflow: hidden; height: 100vh; }
+
+  nav { background: white; border-bottom: 1px solid #e5e7eb; padding: 0 64px; height: 64px; display: flex; align-items: center; justify-content: space-between; }
+  .logo { display: flex; align-items: center; gap: 10px; }
+  .logo-box { width: 36px; height: 36px; background: linear-gradient(135deg, #059669, #0d9488); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 18px; }
+  .logo-text { font-size: 18px; font-weight: 800; color: #111827; }
+  .logo-text span { color: #059669; }
+  .nav-menu { display: flex; gap: 32px; font-size: 13px; color: #6b7280; font-weight: 500; }
+  .nav-menu a { text-decoration: none; color: inherit; cursor: pointer; }
+  .nav-menu a.active { color: #059669; font-weight: 600; }
+  .nav-cta { background: #059669; color: white; border: none; border-radius: 8px; padding: 9px 22px; font-size: 13px; font-weight: 600; cursor: pointer; }
+
+  /* Hero */
+  .hero { background: linear-gradient(135deg, #064e3b 0%, #065f46 50%, #047857 100%); color: white; padding: 48px 64px; display: flex; align-items: center; gap: 64px; height: 280px; position: relative; overflow: hidden; }
+  .hero::before { content: ''; position: absolute; right: -60px; top: -60px; width: 300px; height: 300px; background: rgba(255,255,255,.05); border-radius: 50%; }
+  .hero::after { content: ''; position: absolute; right: 80px; bottom: -80px; width: 200px; height: 200px; background: rgba(255,255,255,.03); border-radius: 50%; }
+  .hero-left { flex: 1; z-index: 2; }
+  .hero-tag { display: inline-flex; align-items: center; gap: 6px; background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.2); border-radius: 20px; padding: 4px 14px; font-size: 11px; margin-bottom: 18px; }
+  .hero h1 { font-size: 34px; font-weight: 800; line-height: 1.15; letter-spacing: -0.5px; margin-bottom: 14px; }
+  .hero h1 em { font-style: normal; color: #6ee7b7; }
+  .hero p { color: rgba(255,255,255,.75); font-size: 13px; line-height: 1.6; margin-bottom: 24px; max-width: 380px; }
+  .hero-btns { display: flex; gap: 12px; }
+  .btn-white { background: white; color: #059669; border: none; border-radius: 8px; padding: 10px 24px; font-size: 13px; font-weight: 700; cursor: pointer; }
+  .btn-ghost { background: rgba(255,255,255,.1); color: white; border: 1px solid rgba(255,255,255,.25); border-radius: 8px; padding: 10px 24px; font-size: 13px; cursor: pointer; }
+  .hero-right { z-index: 2; display: flex; gap: 14px; }
+  .stat-card { background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.15); backdrop-filter: blur(10px); border-radius: 14px; padding: 20px 24px; text-align: center; min-width: 110px; }
+  .stat-num { font-size: 28px; font-weight: 800; color: #6ee7b7; }
+  .stat-label { font-size: 11px; color: rgba(255,255,255,.7); margin-top: 4px; }
+
+  /* Services */
+  .section { padding: 28px 64px; }
+  .section-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px; }
+  .section-title { font-size: 18px; font-weight: 700; color: #111827; }
+  .section-subtitle { font-size: 12px; color: #6b7280; margin-top: 3px; }
+  .see-all { font-size: 12px; color: #059669; font-weight: 600; cursor: pointer; }
+  .services-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-bottom: 24px; }
+  .service-card { background: white; border: 1px solid #e5e7eb; border-radius: 14px; padding: 20px; cursor: pointer; transition: box-shadow .2s; }
+  .service-card:hover { box-shadow: 0 4px 20px rgba(0,0,0,.08); }
+  .service-card.featured { border-color: #059669; background: linear-gradient(135deg, #f0fdf4, #ecfdf5); }
+  .svc-icon { width: 44px; height: 44px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 22px; margin-bottom: 14px; }
+  .svc-title { font-size: 14px; font-weight: 700; margin-bottom: 6px; }
+  .svc-desc { font-size: 12px; color: #6b7280; line-height: 1.5; margin-bottom: 12px; }
+  .svc-price { font-size: 13px; font-weight: 700; color: #059669; }
+
+  /* Bottom row */
+  .bottom-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .info-card { background: white; border: 1px solid #e5e7eb; border-radius: 14px; padding: 20px; }
+  .info-card-title { font-size: 14px; font-weight: 700; margin-bottom: 14px; display: flex; align-items: center; gap: 8px; }
+  .team-row { display: flex; gap: 10px; }
+  .team-member { text-align: center; }
+  .team-avatar { width: 48px; height: 48px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 22px; margin: 0 auto 6px; }
+  .team-name { font-size: 11px; font-weight: 600; }
+  .team-role { font-size: 10px; color: #9ca3af; }
+  .timeline-item { display: flex; gap: 12px; margin-bottom: 14px; }
+  .tl-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; margin-top: 4px; border: 2px solid; }
+  .tl-text { font-size: 12px; }
+  .tl-date { font-size: 10px; color: #9ca3af; margin-bottom: 2px; }
+  .tl-title { font-weight: 600; color: #111827; }
+</style>
+</head>
+<body>
+<nav>
+  <div class="logo">
+    <div class="logo-box">🏢</div>
+    <div class="logo-text">Maju<span>Bersama</span></div>
+  </div>
+  <div class="nav-menu">
+    <a class="active">Beranda</a>
+    <a>Layanan</a>
+    <a>Tim Ahli</a>
+    <a>Klien Kami</a>
+    <a>Artikel</a>
+    <a>Tentang</a>
+  </div>
+  <button class="nav-cta">Konsultasi Gratis</button>
+</nav>
+
+<div class="hero">
+  <div class="hero-left">
+    <div class="hero-tag">✅ Konsultan Bersertifikat ISO 9001</div>
+    <h1>Strategi Bisnis yang <em>Tepat Sasaran</em> untuk Bisnis Anda</h1>
+    <p>Kami membantu perusahaan Anda tumbuh dengan solusi manajemen berbasis data, audit organisasi, dan perencanaan strategis yang terukur.</p>
+    <div class="hero-btns">
+      <button class="btn-white">Mulai Konsultasi</button>
+      <button class="btn-ghost">Lihat Case Study</button>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="stat-card"><div class="stat-num">200+</div><div class="stat-label">Klien sukses</div></div>
+    <div class="stat-card"><div class="stat-num">12th</div><div class="stat-label">Pengalaman</div></div>
+    <div class="stat-card"><div class="stat-num">98%</div><div class="stat-label">Kepuasan klien</div></div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-header">
+    <div>
+      <div class="section-title">Layanan Unggulan</div>
+      <div class="section-subtitle">Solusi komprehensif untuk setiap kebutuhan bisnis Anda</div>
+    </div>
+    <div class="see-all">Lihat semua layanan →</div>
+  </div>
+
+  <div class="services-grid">
+    <div class="service-card featured">
+      <div class="svc-icon" style="background:#dcfce7">📊</div>
+      <div class="svc-title">Audit Manajemen</div>
+      <div class="svc-desc">Evaluasi menyeluruh proses bisnis, efisiensi operasional, dan gap analisis organisasi Anda.</div>
+      <div class="svc-price">Mulai Rp 5 Jt</div>
+    </div>
+    <div class="service-card">
+      <div class="svc-icon" style="background:#dbeafe">🎯</div>
+      <div class="svc-title">Strategi Pertumbuhan</div>
+      <div class="svc-desc">Perencanaan ekspansi bisnis, penetrasi pasar baru, dan analisis kompetitor industri.</div>
+      <div class="svc-price">Mulai Rp 8 Jt</div>
+    </div>
+    <div class="service-card">
+      <div class="svc-icon" style="background:#fef3c7">💡</div>
+      <div class="svc-title">Inovasi & Digitalisasi</div>
+      <div class="svc-desc">Transformasi digital, adopsi teknologi, dan optimasi proses berbasis AI dan data.</div>
+      <div class="svc-price">Mulai Rp 10 Jt</div>
+    </div>
+    <div class="service-card">
+      <div class="svc-icon" style="background:#fce7f3">👥</div>
+      <div class="svc-title">Pengembangan SDM</div>
+      <div class="svc-desc">Training kepemimpinan, budaya perusahaan, dan program pelatihan karyawan terstruktur.</div>
+      <div class="svc-price">Mulai Rp 6 Jt</div>
+    </div>
+  </div>
+
+  <div class="bottom-row">
+    <div class="info-card">
+      <div class="info-card-title">👨‍💼 Tim Konsultan Kami</div>
+      <div class="team-row">
+        <div class="team-member">
+          <div class="team-avatar" style="background:#dcfce7">👨‍💼</div>
+          <div class="team-name">Dr. Hendra</div>
+          <div class="team-role">CEO Partner</div>
+        </div>
+        <div class="team-member">
+          <div class="team-avatar" style="background:#dbeafe">👩‍💼</div>
+          <div class="team-name">Siti Rahayu</div>
+          <div class="team-role">Strategy Lead</div>
+        </div>
+        <div class="team-member">
+          <div class="team-avatar" style="background:#fef3c7">👨‍💻</div>
+          <div class="team-name">Budi Hartono</div>
+          <div class="team-role">Tech Advisor</div>
+        </div>
+        <div class="team-member">
+          <div class="team-avatar" style="background:#fce7f3">👩‍🔬</div>
+          <div class="team-name">Rina Lestari</div>
+          <div class="team-role">HR Specialist</div>
+        </div>
+      </div>
+    </div>
+    <div class="info-card">
+      <div class="info-card-title">📅 Update Terbaru</div>
+      <div class="timeline-item"><div class="tl-dot" style="background:#059669;border-color:#059669"></div><div class="tl-text"><div class="tl-date">28 Mei 2025</div><div class="tl-title">Workshop Leadership Batch #12 dibuka</div></div></div>
+      <div class="timeline-item"><div class="tl-dot" style="background:transparent;border-color:#d1d5db"></div><div class="tl-text"><div class="tl-date">15 Mei 2025</div><div class="tl-title">Case Study PT Nusantara berhasil capai target Q2</div></div></div>
+      <div class="timeline-item"><div class="tl-dot" style="background:transparent;border-color:#d1d5db"></div><div class="tl-text"><div class="tl-date">1 Mei 2025</div><div class="tl-title">Kantor baru Jakarta Selatan resmi beroperasi</div></div></div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
