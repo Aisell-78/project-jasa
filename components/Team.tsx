@@ -21,7 +21,7 @@ export default function Team() {
 
   return (
     <section id="team" className="py-24 relative overflow-hidden">
-      <div className="absolute top-1/2 left-0 w-64 h-64 bg-neon-cyan/5 rounded-full blur-[100px] -z-10" />
+      <div className="hidden md:block absolute top-1/2 left-0 w-64 h-64 bg-neon-cyan/5 rounded-full blur-[100px] -z-10" />
       
       <div className="container mx-auto px-6 md:px-12 text-center">
         <motion.div

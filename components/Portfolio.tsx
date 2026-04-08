@@ -34,7 +34,7 @@ const projects: Project[] = [
     tech: ["Next.js", "Tailwind CSS", "Framer Motion", "Vercel"],
     duration: "3 Minggu",
     client: "Waroeng Coffee Heritage",
-    year: "2025",
+    year: "2026",
   },
   {
     id: 2,
@@ -53,7 +53,7 @@ const projects: Project[] = [
   },
   {
     id: 3,
-    title: "Bina Karya Corporate Website",
+    title: "Nexus",
     category: "Company Profile",
     image: "/project_corporate_new.png",
     accent: "from-emerald-400 to-teal-500",
@@ -63,8 +63,8 @@ const projects: Project[] = [
       "Website profil perusahaan modern yang kami bangun secara custom. Kami merancang antarmuka profesional dan bersih dengan struktur konten yang kuat untuk menonjolkan nilai perusahaan. Dilengkapi animasi halus untuk kesan premium dan optimasi SEO tingkat tinggi yang siap bersaing di halaman pencarian.",
     tech: ["Next.js", "Framer Motion", "Tailwind CSS", "Vercel"],
     duration: "4 Minggu",
-    client: "PT Bina Karya",
-    year: "2024",
+    client: "nexus team",
+    year: "2025",
   },
   {
     id: 4,
@@ -94,7 +94,7 @@ const projects: Project[] = [
     tech: ["Next.js", "Framer Motion", "Tailwind CSS"],
     duration: "2 Minggu",
     client: "FitLife",
-    year: "2024",
+    year: "2025",
   },
 ];
 

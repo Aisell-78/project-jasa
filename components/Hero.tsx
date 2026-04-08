@@ -8,8 +8,8 @@ export default function Hero() {
   return (
     <section className="relative pt-32 pb-20 md:pt-48 md:pb-32 overflow-hidden flex flex-col items-center justify-center min-h-[90vh]">
       {/* Background glowing effects */}
-      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-neon-blue/20 rounded-full blur-[120px] -z-10" />
-      <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-indigo-500/10 rounded-full blur-[120px] -z-10" />
+      <div className="hidden md:block absolute top-1/4 left-1/4 w-96 h-96 bg-neon-blue/20 rounded-full blur-[120px] -z-10" />
+      <div className="hidden md:block absolute bottom-1/4 right-1/4 w-96 h-96 bg-indigo-500/10 rounded-full blur-[120px] -z-10" />
 
       <div className="container mx-auto px-6 text-center max-w-4xl">
         <motion.div
@@ -50,7 +50,7 @@ export default function Hero() {
           className="flex flex-col sm:flex-row items-center justify-center gap-4"
         >
           <Link
-            href="https://wa.me/6282328681430"
+            href="https://wa.me/625756365672"
             target="_blank" 
             rel="noopener noreferrer"
             className="group relative inline-flex items-center justify-center gap-2 px-8 py-4 bg-neon-cyan text-slate-950 rounded-full font-bold text-lg overflow-hidden transition-all hover:bg-neon-blue hover:shadow-[0_0_25px_rgba(0,240,255,0.6)]"

@@ -24,8 +24,8 @@ export default function About() {
   return (
     <section id="about" className="py-24 relative overflow-hidden">
       {/* Background Decor */}
-      <div className="absolute top-1/2 left-0 -translate-y-1/2 w-96 h-96 bg-neon-blue/10 rounded-full blur-[100px] -z-10" />
-      <div className="absolute top-1/4 right-0 w-[500px] h-[500px] bg-neon-cyan/5 rounded-full blur-[120px] -z-10" />
+      <div className="hidden md:block absolute top-1/2 left-0 -translate-y-1/2 w-96 h-96 bg-neon-blue/10 rounded-full blur-[100px] -z-10" />
+      <div className="hidden md:block absolute top-1/4 right-0 w-[500px] h-[500px] bg-neon-cyan/5 rounded-full blur-[120px] -z-10" />
 
       <div className="container mx-auto px-6 md:px-12">
         <motion.div
@@ -57,7 +57,7 @@ export default function About() {
             whileInView="whileInView"
             className="relative flex justify-center items-center"
           >
-            <div className="absolute inset-0 bg-gradient-to-tr from-neon-blue/20 to-neon-cyan/20 rounded-[3rem] blur-3xl -z-10 animate-pulse-slow"></div>
+            <div className="hidden md:block absolute inset-0 bg-gradient-to-tr from-neon-blue/20 to-neon-cyan/20 rounded-[3rem] blur-3xl -z-10 animate-pulse-slow"></div>
             <div className="glass p-12 md:p-16 rounded-[3rem] border border-slate-700/50 shadow-2xl relative overflow-hidden group">
               <div className="absolute inset-0 bg-gradient-to-br from-neon-cyan/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               
